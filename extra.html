@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SD css表单对齐解决方案</title>
+<style type="text/css">
+body{font:12px/1.5 Tahoma;}
+h1{padding:10px 0; margin-bottom:10px; color:#666; border-bottom:1px solid #ccc; font-size:12px;}
+.con{color:#666; padding:10px 20px; background:#FFC;}
+.con ul{padding:0 10px;}
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{padding:0;margin:0;}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,th,var{font-weight:normal;font-style:normal}
+strong, b{ font-weight: bold; }
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-weight:700;}
+h1{font-size:18px}
+h2{font-size:16px}
+h3{font-size:14px}
+h4{font-size:14px}
+h5{font-size:12px}
+h6{font-size:12px}
+q:before,q:after{content:''}
+abbr,acronym{border:0}
+hr {margin: 0;padding: 0;border: 0;color: #CDCDCD;background-color: #CDCDCD;height: 1px}
+blockquote{color:#666;font-style:italic;}
+sup,sub{line-height:0}
+abbr,acronym{border-bottom:1px dotted #666}
+pre{white-space:pre;}
+pre,code,tt{font:12px 'andale mono', 'lucida console', monospace;line-height:1.5}
+@charset "utf-8";
+.sd-form-list{position:relative;font-size:12px; line-height:1.5; font-family:Tahoma;}/*这里使用Tahoma字体使表单对齐*/
+.sd-form-list .form-position-right{position:absolute; right:10px; top:0;}
+.sd-form-list .sd-form-txt{height: 20px; padding-left:3px; line-height:20px;background-color:#FFFFFF; border:1px solid #BBBBBB; vertical-align:middle;}
+.sd-form-list .row{margin-bottom:6px;}/*每行间距*/
+.sd-form-list input{vertical-align:middle;}
+.sd-form-list .sd-form-label{display:inline-block; width:110px; *display:inline; *zoom:1; text-align:right; vertical-align:middle;}/*width控制左列宽,text-align设置对齐方式*/
+.sd-form-list label.vt{vertical-align:top;}
+.sd-form-list label.vb{vertical-align:bottom;}
+.sd-form-list .sd-form-label em{color:red; margin-right:5px; font-family:simsun; font-style:normal;}
+.sd-form-list .collection{display:inline-block; *display:inline; *zoom:1; vertical-align:middle;}
+.sd-form-list .rc{ margin-right:10px;}
+.sd-form-list .rc input{vertical-align:text-top; width:13px; height:15px;  margin-right:5px;}
+.sd-form-list select{height:22px; border:1px solid #bbb; vertical-align:middle;font-family:Tahoma; font-size:12px;}
+.sd-form-list .sd-textarea{padding:3px; border:1px solid #bbb; width:400px; height:60px; font:12px/1.5em Tahoma;overflow-y:auto;}
+.sd-form-list span.sd-mark{color:red; padding-left:10px;}
+.sd-form-list p.sd-mark{color:red; padding-left:0; padding-top:3px;}
+.sd-form-list .sd-form-file{vertical-align:middle; *height:22px;}
+.sd-form-list .sd-form-btn{overflow:visible; padding:0 10px;}
+</style>
+</head>
+<body>
+<div style="width:530px; margin:10px auto;">
+	<h1>SD css表单对齐解决方案</h1>
+	<div class="sd-form-list">
+		<div class="form-position-right"><a href="#">编辑</a> | <a href="#">删除</a></div>
+		<div class="row">
+		<label class="sd-form-label">纯文字：</label>
+			<div class="collection">
+				这里是文字
+			</div>
+		</div>
+	<div class="row">
+			<label class="sd-form-label">纯字母：</label>
+			<div class="collection">
+				1234567890
+			</div>
+		</div>
+		<div class="row">
+			<label class="sd-form-label"><em>*</em>单行文本框：</label>
+			<div class="collection">
+				<input type="text" class="sd-form-txt" />
+				<span class="sd-mark">表单验证</span>
+			</div>
+		</div>
+		<div class="row">
+			<label class="sd-form-label">密码文本框：</label>
+			<div class="collection">
+				<input type="password" class="sd-form-txt" />
+			</div>
+		</div>
+		<div class="row">
+			<label class="sd-form-label">单选框：</label>
+			<div class="collection">
+				<label class="rc"><input type="radio" />项目1</label>
+				<label class="rc"><input type="radio" />项目2</label>
+			</div>
+		</div>
+		<div class="row">
+			<label class="sd-form-label">多选框：</label>
+			<div class="collection">
+				<label class="rc"><input type="checkbox" />项目1</label>
+				<label class="rc"><input type="checkbox" />项目2</label>
+			</div>
+		</div>
+		<div class="row">
+			<label class="sd-form-label">下拉列表：</label>
+			<div class="collection">
+				<select>
+					<option>选项1</option>
+				</select>
+				<select>
+					<option>选项2</option>
+
+				</select>
+
+				<select>
+					<option>选项3</option>
+				</select>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+			<label class="sd-form-label vt">文本域：</label>
+
+			<div class="collection">
+
+				<textarea class="sd-textarea" rows="3" cols=""></textarea>
+
+				<p class="sd-mark">表单验证</p>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<label class="sd-form-label">上传控件：</label>
+
+			<div class="collection">
+
+				<input type="file" class="sd-form-file" />
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<label class="sd-form-label">label居中：</label>
+
+			<div class="collection">
+
+				<textarea class="sd-textarea" rows="3" cols=""></textarea>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<label class="sd-form-label vb">label居底：</label>
+
+			<div class="collection">
+
+				<textarea class="sd-textarea" rows="3" cols=""></textarea>
+
+			</div>
+
+		</div>
+
+		<div class="row mt10">
+
+			<label class="sd-form-label">&nbsp;</label>
+
+			<div class="collection">
+
+				<input type="submit" class="sd-form-btn" value="保存" />
+
+				<input type="button" class="sd-form-btn" value="取消" />
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="con">
+
+		<p>解决:</p>
+
+		<ul>
+
+			<li>单选/多选框对齐与默认间距问题</li>
+
+			<li>实现了左侧文字垂直居顶居中居底</li>
+
+		</ul>
+		<p>缺点：暂不支持14px字体</p>
+</div>
+</div>
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3448069-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
